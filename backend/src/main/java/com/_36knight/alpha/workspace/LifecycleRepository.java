@@ -33,6 +33,11 @@ public class LifecycleRepository {
     /** 运行期间不能取消、重开或启动同版本第二个任务。 */ public boolean running(String version){return runs.selectCount(new QueryWrapper<PrdRunEntity>().eq("version_id",version).in("status",List.of("QUEUED","RUNNING")))>0;}
     /** 启动查询未终结任务。 */ public List<PrdRunEntity> unfinished(){return runs.selectList(new QueryWrapper<PrdRunEntity>().in("status",List.of("QUEUED","RUNNING")));}
     /** 产物历史有界分页。 */ public Page<LifecycleRevisionEntity> history(String version,String kind,long page){return revisions.selectPage(new Page<>(page,50),new QueryWrapper<LifecycleRevisionEntity>().eq("version_id",version).eq("kind",kind).orderByDesc("revision"));}
+    /** 精确读取不可变 PRD 保存记录，缺失时不回退到其他修订。 */
+    public LifecycleRevisionEntity prdRevision(String version, long revision) {
+        return revisions.selectOne(new QueryWrapper<LifecycleRevisionEntity>()
+                .eq("version_id", version).eq("kind", "PRD").eq("revision", revision));
+    }
     /** 已确认基线目录有界分页。 */ public Page<LifecycleBaselineEntity> baselines(String version,long page){return baselines.selectPage(new Page<>(page,50),new QueryWrapper<LifecycleBaselineEntity>().eq("version_id",version).orderByDesc("created_at").orderByDesc("id"));}
     /** 插入初始产物。 */ public void insert(LifecycleStateEntity s){states.insert(s);}
     /** 原子业务事务内更新当前产物。 */ public void update(LifecycleStateEntity s){states.updateById(s);}

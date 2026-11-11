@@ -204,9 +204,10 @@ Java 源码包根为 `backend/src/main/java/com/_36knight/alpha/`。
 | 模型实际收到什么，回答怎样转换为 Java 对象？ | `agent/SpringAiRequirementAnalyzer.java` 的 `editWorkbench`、`workspace/WorkbenchContracts.java` |
 | 页面计划与文件生成怎样衔接？ | `prototype/PrototypeWorkflow.java`，观察 `plan_pages → generate_files` |
 | 模型怎样被装配和动态切换？ | `config/AgentModelConfiguration.java` 及模型配置相关服务 |
+| 模型怎样请求只读页面规则查询？ | `agent/tool/PageRuleTools.java`、`workspace/PageRuleQueryService.java`，见[工具实现与实验](docs/页面规则查询工具.md) |
 | 规则和异常怎样被验证？ | `backend/src/test/java/com/_36knight/alpha/` 下的 Workbench、Prototype、Model 相关测试 |
 
-当前主要业务入口采用模型调用与显式 Graph。依赖 Agent Framework 不表示已经实现自主工具循环、多 Agent、RAG、Skill 或 MCP；这些能力适合作为后续独立扩展，按实际代码与运行记录说明完成状态。
+当前主要业务入口采用模型调用与显式 Graph。新增的只读页面规则工具通过独立 ChatClient 集成测试验证，可供后续评审流程接入；尚未自动注册到现有工作台对话。依赖 Agent Framework 不表示已经实现自主工具循环、多 Agent、RAG、Skill 或 MCP；这些能力适合作为后续独立扩展，按实际代码与运行记录说明完成状态。
 
 ## 文档导航与排错
 
