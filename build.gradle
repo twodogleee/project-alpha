@@ -1,0 +1,61 @@
+/**
+ * 统一管理 Alpha 的后端构建与前端打包。
+ * @author Andersen
+ */
+plugins {
+    id 'base'
+    id 'org.springframework.boot' version '3.5.8' apply false
+    id 'io.spring.dependency-management' version '1.1.7' apply false
+}
+
+allprojects {
+    group = 'com._36knight.alpha'
+    version = '0.1.0'
+    repositories {
+        mavenCentral()
+    }
+}
+
+// Windows 和 Unix 使用各自的 npm 命令入口。
+def npmExecutable = System.getProperty('os.name').toLowerCase().contains('windows') ? 'npm.cmd' : 'npm'
+
+tasks.register('frontendInstall', Exec) {
+    group = 'build'
+    description = '根据锁文件安装前端依赖'
+    workingDir file('frontend')
+    commandLine npmExecutable, 'ci', '--no-audit', '--no-fund'
+    inputs.files('frontend/package.json', 'frontend/package-lock.json')
+    outputs.dir('frontend/node_modules')
+}
+
+tasks.register('frontendBuild', Exec) {
+    group = 'build'
+    description = '构建前端静态资源'
+    dependsOn 'frontendInstall'
+    workingDir file('frontend')
+    commandLine npmExecutable, 'run', 'build'
+    inputs.dir('frontend/src')
+    // 前端直接编译同一份版本化模板，目录变更必须使已有静态产物失效。
+    inputs.file('backend/src/main/resources/prd-templates/catalog.json')
+    inputs.files('frontend/index.html', 'frontend/vite.config.js', 'frontend/package-lock.json')
+    inputs.files(fileTree('frontend') { include '.env*' })
+    outputs.dir('frontend/dist')
+}
+
+tasks.register('frontendTest', Exec) {
+    group = 'verification'
+    description = '验证前端编辑状态与保存边界'
+    dependsOn 'frontendInstall'
+    workingDir file('frontend')
+    commandLine npmExecutable, 'test'
+}
+
+tasks.register('assembleApp') {
+    group = 'build'
+    description = '将 Vue 工作台与 Spring Boot 后端打包为一个可运行 JAR'
+    dependsOn ':backend:check', 'frontendTest', ':backend:bootJar'
+}
+
+tasks.named('assemble') { dependsOn ':backend:assemble' }
+tasks.named('check') { dependsOn ':backend:check', 'frontendTest' }
+tasks.named('clean') { delete 'frontend/dist' }

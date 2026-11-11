@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 业务版本条件更新不依赖 JVM 锁，可跨后端实例校验。@author Andersen -->
+<mapper namespace="com._36knight.alpha.project.mapper.ProjectDocumentMapper">
+    <update id="updateIfRevision">
+        UPDATE project_documents
+        SET name = #{document.name}, revision = #{document.revision}, updated_at = #{document.updatedAt},
+            document_json = #{document.documentJson,jdbcType=OTHER,typeHandler=com._36knight.alpha.project.persistence.JsonDocumentTypeHandler}
+        WHERE id = #{document.id} AND revision = #{expectedRevision}
+    </update>
+</mapper>

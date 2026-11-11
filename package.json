@@ -1,0 +1,23 @@
+{
+  "name": "project-alpha",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npm run dev:frontend",
+    "dev:all": "node scripts/dev.mjs",
+    "dev:backend": "./gradlew :backend:bootRun --console=plain",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "install:frontend": "npm --prefix frontend ci",
+    "build": "./gradlew assembleApp",
+    "test": "./gradlew :backend:test",
+    "build:frontend": "npm --prefix frontend run build",
+    "prototype:install": "npm --prefix prototype-template/zero-admin ci && npm --prefix prototype-worker ci",
+    "prototype:test": "npm --prefix prototype-template/zero-admin test && npm --prefix prototype-worker test",
+    "prototype:doctor": "node prototype-worker/src/cli.mjs doctor",
+    "prototype:prepare": "node prototype-worker/src/cli.mjs prepare",
+    "prototype:build": "node prototype-worker/src/cli.mjs build-fixture",
+    "prototype:preview": "node prototype-worker/src/cli.mjs preview"
+  },
+  "engines": { "node": ">=20.19.0" }
+}

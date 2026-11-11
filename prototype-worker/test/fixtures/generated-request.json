@@ -1,0 +1,68 @@
+{
+  "protocolVersion": 1,
+  "mode": "synthetic",
+  "generation": "test-fixture",
+  "files": [
+    {
+      "path": "src/mock/generated/items.js",
+      "content": "/** 合成联调共享数据，刷新恢复。@author Andersen */\nimport { reactive } from 'vue';\nexport const item = reactive({id:'item-1',name:'初始项目'});\n"
+    },
+    {
+      "path": "src/features/generated/Items.vue",
+      "content": "<script setup>\n/** 合成联调列表，非模型结果。@author Andersen */\nimport { ref } from 'vue';\nimport { item } from '@/mock/generated/items.js';\nconst name = ref(item.name);\nfunction save(){item.name=name.value;}\n</script>\n<template><section><h1>项目管理</h1><p data-testid=\"item-name\">{{item.name}}</p><label>项目名称<input data-testid=\"item-input\" v-model=\"name\" /></label><button data-testid=\"save-item\" @click=\"save\">保存</button><router-link data-testid=\"view-item\" to=\"/items/item-1\">查看详情</router-link></section></template>\n"
+    },
+    {
+      "path": "src/features/generated/ItemDetail.vue",
+      "content": "<script setup>\n/** 合成联调详情，使用同一内存实体。@author Andersen */\nimport { item } from '@/mock/generated/items.js';\n</script>\n<template><section><h1>项目详情</h1><p data-testid=\"detail-name\">{{item.name}}</p><router-link to=\"/items\">返回列表</router-link></section></template>\n"
+    }
+  ],
+  "pages": [
+    {
+      "moduleId": "items",
+      "pageId": "list",
+      "title": "项目管理",
+      "path": "/items",
+      "component": "src/features/generated/Items.vue"
+    },
+    {
+      "moduleId": "items",
+      "pageId": "detail",
+      "title": "项目详情",
+      "path": "/items/:id",
+      "testPath": "/items/item-1",
+      "menu": false,
+      "component": "src/features/generated/ItemDetail.vue"
+    }
+  ],
+  "cases": [
+    {
+      "name": "编辑后详情同步",
+      "path": "/items",
+      "steps": [
+        {
+          "action": "fill",
+          "testId": "item-input",
+          "value": "联调更新项目"
+        },
+        {
+          "action": "click",
+          "testId": "save-item"
+        },
+        {
+          "action": "assertText",
+          "testId": "item-name",
+          "text": "联调更新项目"
+        },
+        {
+          "action": "click",
+          "testId": "view-item"
+        },
+        {
+          "action": "assertText",
+          "testId": "detail-name",
+          "text": "联调更新项目"
+        }
+      ]
+    }
+  ]
+}

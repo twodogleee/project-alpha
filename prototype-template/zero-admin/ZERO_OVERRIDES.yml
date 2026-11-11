@@ -1,0 +1,50 @@
+# 原型模板只采用可独立使用的组件闭包；Alpha 工作台未加入 Zero 基线。
+schema_version: 1
+scope:
+  kind: application
+  path: .
+verification:
+  commands:
+    - npm test
+    - npm run build
+overrides:
+  - asset: foundation.web-shell
+    adoption: managed
+    paths:
+      - src/components/**
+      - src/composables/useClipboardAction.js
+      - src/store/queryPanelPrefs.js
+      - src/store/tableColumnPrefs.js
+      - src/utils/tableColumnPrefs.js
+      - src/tailwind.css
+    reason: 仅采用 zero-source.json 列出的组件依赖闭包，标记 adapted-style 的文件将上游 CSS 变量替换为 --project-alpha-*，清单分别记录采用前后摘要；未列入的 shell 资产不属于本应用采用范围。
+  - asset: foundation.web-shell
+    adoption: replaced
+    paths:
+      - src/App.vue
+      - src/main.js
+      - src/constants/storage.js
+      - src/platform/routes.js
+    reason: 独立静态原型入口；Hash 路由、内存 Pinia、静态导航，无持久化插件、动态权限或认证状态。
+  - asset: foundation.web-shell
+    adoption: forked
+    mapping:
+      src/App.vue: src/styles/zero-theme.css
+    reason: 从上游 App.vue 摘取完整 style 为独立 CSS，并适配项目的 CSS 变量前缀。zero-source.json 记录样式摘取时与适配后的摘要。
+  - asset: foundation.web-build
+    adoption: configured
+    reason: 固定前端依赖与相对静态 base；不采用 OAuth 构建校验、业务代理与 SVG 构建插件。
+  - asset: project.zero-profile
+    adoption: configured
+    paths:
+      - src/project/profile.js
+    reason: 原型身份与模板联调说明独立配置，不采用 Zero 环境值。
+  - asset: foundation.web
+    adoption: disabled
+    reason: 原型不使用认证流程、权限守卫、动态路由缓存和后端 HTTP 接线；静态页面导航不启用 KeepAlive 或持久化标签。
+  - asset: integration.web
+    adoption: disabled
+    reason: 不调用 Zero 后端或认证中心；对应 backend>=zero-v2.4.0 与 auth_interface>=1.3.0 不在裁剪范围中，不宣称整套前后端兼容。
+  - asset: feature.standard-admin
+    adoption: disabled
+    reason: 不采用系统管理和日志业务；人员页面仅为模板校准的本地样板。

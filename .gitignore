@@ -1,0 +1,24 @@
+# 编译、下载和本地 IDE 状态
+.gradle/
+**/build/
+**/node_modules/
+**/dist/
+.idea/
+.vscode/
+*.iml
+.DS_Store
+*.log
+logs/
+data/
+# Zero 的 data 是源码组件目录，不能被运行数据目录规则排除。
+!prototype-template/zero-admin/src/components/data/
+!prototype-template/zero-admin/src/components/data/**
+*.mv.db
+*.trace.db
+
+# 部署配置和密钥；示例文件可跟踪
+.env
+.env.*
+!.env.example
+**/application-local.yaml
+**/application-local.yml

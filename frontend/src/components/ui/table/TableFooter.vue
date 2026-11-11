@@ -1,0 +1,19 @@
+<!-- shadcn-vue 官方组件源码，使用 Reka UI 原语；业务规则由页面维护。来源与许可见本目录 README。 -->
+<script setup>
+import { cn } from "@/lib/utils";
+
+const props = defineProps({
+  class: { type: null, required: false },
+});
+</script>
+
+<template>
+  <tfoot
+    data-slot="table-footer"
+    :class="
+      cn('bg-muted/50 border-t font-medium [&>tr]:last:border-b-0', props.class)
+    "
+  >
+    <slot />
+  </tfoot>
+</template>

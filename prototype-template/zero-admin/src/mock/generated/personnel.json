@@ -1,0 +1,252 @@
+{
+  "departments": [
+    {
+      "id": "engineering",
+      "name": "研发部"
+    },
+    {
+      "id": "product",
+      "name": "产品部"
+    },
+    {
+      "id": "operations",
+      "name": "运营部"
+    }
+  ],
+  "people": [
+    {
+      "id": "person-001",
+      "name": "张明",
+      "departmentId": "engineering",
+      "email": "demo01@example.test",
+      "capacity": 1,
+      "enabled": true,
+      "notes": "本地模拟记录，不对应真实人员。"
+    },
+    {
+      "id": "person-002",
+      "name": "李婷",
+      "departmentId": "product",
+      "email": "demo02@example.test",
+      "capacity": 2,
+      "enabled": true,
+      "notes": "本地模拟记录，不对应真实人员。"
+    },
+    {
+      "id": "person-003",
+      "name": "王磊",
+      "departmentId": "operations",
+      "email": "demo03@example.test",
+      "capacity": 3,
+      "enabled": true,
+      "notes": "本地模拟记录，不对应真实人员。"
+    },
+    {
+      "id": "person-004",
+      "name": "赵静",
+      "departmentId": "engineering",
+      "email": "demo04@example.test",
+      "capacity": 4,
+      "enabled": true,
+      "notes": "本地模拟记录，不对应真实人员。"
+    },
+    {
+      "id": "person-005",
+      "name": "陈晨",
+      "departmentId": "product",
+      "email": "demo05@example.test",
+      "capacity": 5,
+      "enabled": true,
+      "notes": "本地模拟记录，不对应真实人员。"
+    },
+    {
+      "id": "person-006",
+      "name": "刘洋",
+      "departmentId": "operations",
+      "email": "demo06@example.test",
+      "capacity": 1,
+      "enabled": false,
+      "notes": "本地模拟记录，不对应真实人员。"
+    },
+    {
+      "id": "person-007",
+      "name": "周颖",
+      "departmentId": "engineering",
+      "email": "demo07@example.test",
+      "capacity": 2,
+      "enabled": true,
+      "notes": "本地模拟记录，不对应真实人员。"
+    },
+    {
+      "id": "person-008",
+      "name": "吴迪",
+      "departmentId": "product",
+      "email": "demo08@example.test",
+      "capacity": 3,
+      "enabled": true,
+      "notes": "本地模拟记录，不对应真实人员。"
+    },
+    {
+      "id": "person-009",
+      "name": "徐欣",
+      "departmentId": "operations",
+      "email": "demo09@example.test",
+      "capacity": 4,
+      "enabled": true,
+      "notes": "本地模拟记录，不对应真实人员。"
+    },
+    {
+      "id": "person-010",
+      "name": "孙浩",
+      "departmentId": "engineering",
+      "email": "demo10@example.test",
+      "capacity": 5,
+      "enabled": true,
+      "notes": "本地模拟记录，不对应真实人员。"
+    },
+    {
+      "id": "person-011",
+      "name": "郑敏",
+      "departmentId": "product",
+      "email": "demo11@example.test",
+      "capacity": 1,
+      "enabled": true,
+      "notes": "本地模拟记录，不对应真实人员。"
+    },
+    {
+      "id": "person-012",
+      "name": "马超",
+      "departmentId": "operations",
+      "email": "demo12@example.test",
+      "capacity": 2,
+      "enabled": false,
+      "notes": "本地模拟记录，不对应真实人员。"
+    },
+    {
+      "id": "person-013",
+      "name": "胡悦",
+      "departmentId": "engineering",
+      "email": "demo13@example.test",
+      "capacity": 3,
+      "enabled": true,
+      "notes": "本地模拟记录，不对应真实人员。"
+    },
+    {
+      "id": "person-014",
+      "name": "朱琳",
+      "departmentId": "product",
+      "email": "demo14@example.test",
+      "capacity": 4,
+      "enabled": true,
+      "notes": "本地模拟记录，不对应真实人员。"
+    },
+    {
+      "id": "person-015",
+      "name": "郭峰",
+      "departmentId": "operations",
+      "email": "demo15@example.test",
+      "capacity": 5,
+      "enabled": true,
+      "notes": "本地模拟记录，不对应真实人员。"
+    },
+    {
+      "id": "person-016",
+      "name": "何璐",
+      "departmentId": "engineering",
+      "email": "demo16@example.test",
+      "capacity": 1,
+      "enabled": true,
+      "notes": "本地模拟记录，不对应真实人员。"
+    },
+    {
+      "id": "person-017",
+      "name": "高远",
+      "departmentId": "product",
+      "email": "demo17@example.test",
+      "capacity": 2,
+      "enabled": true,
+      "notes": "本地模拟记录，不对应真实人员。"
+    },
+    {
+      "id": "person-018",
+      "name": "林雪",
+      "departmentId": "operations",
+      "email": "demo18@example.test",
+      "capacity": 3,
+      "enabled": false,
+      "notes": "本地模拟记录，不对应真实人员。"
+    },
+    {
+      "id": "person-019",
+      "name": "罗杰",
+      "departmentId": "engineering",
+      "email": "demo19@example.test",
+      "capacity": 4,
+      "enabled": true,
+      "notes": "本地模拟记录，不对应真实人员。"
+    },
+    {
+      "id": "person-020",
+      "name": "梁爽",
+      "departmentId": "product",
+      "email": "demo20@example.test",
+      "capacity": 5,
+      "enabled": true,
+      "notes": "本地模拟记录，不对应真实人员。"
+    },
+    {
+      "id": "person-021",
+      "name": "宋文",
+      "departmentId": "operations",
+      "email": "demo21@example.test",
+      "capacity": 1,
+      "enabled": true,
+      "notes": "本地模拟记录，不对应真实人员。"
+    },
+    {
+      "id": "person-022",
+      "name": "唐宁",
+      "departmentId": "engineering",
+      "email": "demo22@example.test",
+      "capacity": 2,
+      "enabled": true,
+      "notes": "本地模拟记录，不对应真实人员。"
+    },
+    {
+      "id": "person-023",
+      "name": "许诺",
+      "departmentId": "product",
+      "email": "demo23@example.test",
+      "capacity": 3,
+      "enabled": true,
+      "notes": "本地模拟记录，不对应真实人员。"
+    },
+    {
+      "id": "person-024",
+      "name": "韩青",
+      "departmentId": "operations",
+      "email": "demo24@example.test",
+      "capacity": 4,
+      "enabled": false,
+      "notes": "本地模拟记录，不对应真实人员。"
+    },
+    {
+      "id": "person-025",
+      "name": "冯亮",
+      "departmentId": "engineering",
+      "email": "demo25@example.test",
+      "capacity": 5,
+      "enabled": true,
+      "notes": "本地模拟记录，不对应真实人员。"
+    },
+    {
+      "id": "person-026",
+      "name": "邓洁",
+      "departmentId": "product",
+      "email": "demo26@example.test",
+      "capacity": 1,
+      "enabled": true,
+      "notes": "本地模拟记录，不对应真实人员。"
+    }
+  ]
+}

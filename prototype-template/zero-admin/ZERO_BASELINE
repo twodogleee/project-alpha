@@ -1,0 +1,5 @@
+schema_version: 2
+components:
+  frontend:
+    version: zero-v3.2.1
+    source_commit: 6e07bd5a78804b26ad2904c151e2bf3470631c4c

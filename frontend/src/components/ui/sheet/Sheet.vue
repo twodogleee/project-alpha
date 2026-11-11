@@ -1,0 +1,20 @@
+<!-- shadcn-vue 官方组件源码，使用 Reka UI 原语；业务规则由页面维护。来源与许可见本目录 README。 -->
+<script setup>
+import { DialogRoot, useForwardPropsEmits } from "reka-ui";
+
+const props = defineProps({
+  open: { type: Boolean, required: false },
+  defaultOpen: { type: Boolean, required: false },
+  modal: { type: Boolean, required: false },
+  unmountOnHide: { type: Boolean, required: false },
+});
+const emits = defineEmits(["update:open"]);
+
+const forwarded = useForwardPropsEmits(props, emits);
+</script>
+
+<template>
+  <DialogRoot v-slot="slotProps" data-slot="sheet" v-bind="forwarded">
+    <slot v-bind="slotProps" />
+  </DialogRoot>
+</template>

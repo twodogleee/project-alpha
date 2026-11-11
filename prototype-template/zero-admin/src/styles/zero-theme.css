@@ -1,0 +1,390 @@
+/* Zero App.vue 全局主题提取；原型入口不采用上游认证装配。 */
+
+:root {
+  --project-alpha-primary: #2563eb;
+  --project-alpha-primary-hover: #1d4ed8;
+  --project-alpha-primary-active: #1e40af;
+  --project-alpha-primary-soft: #eff6ff;
+  --project-alpha-primary-soft-border: #bfdbfe;
+  --project-alpha-sidebar-bg: #0f172a;
+  --project-alpha-sidebar-bg-deep: #111827;
+  --project-alpha-sidebar-border: rgba(255, 255, 255, 0.08);
+  --project-alpha-sidebar-active: #2563eb;
+  --project-alpha-sidebar-active-text: #ffffff;
+  --project-alpha-sidebar-hover: rgba(148, 163, 184, 0.12);
+  --project-alpha-sidebar-text: #cbd5e1;
+  --project-alpha-sidebar-subtext: #94a3b8;
+  --project-alpha-page-bg: #f6f8fb;
+  --project-alpha-panel-bg: #ffffff;
+  --project-alpha-tab-bg: #ffffff;
+  --project-alpha-control-bg: #f3f4f6;
+  --project-alpha-border: #e5e7eb;
+  --project-alpha-border-light: #eef2f7;
+  --project-alpha-border-strong: #cbd5e1;
+  --project-alpha-text-primary: #111827;
+  --project-alpha-text-secondary: #4b5563;
+  --project-alpha-text-muted: #6b7280;
+  --project-alpha-success: #15803d;
+  --project-alpha-success-hover: #166534;
+  --project-alpha-success-active: #14532d;
+  --project-alpha-success-soft: #f0fdf4;
+  --project-alpha-success-soft-border: #bbf7d0;
+  --project-alpha-warning: #a16207;
+  --project-alpha-warning-hover: #854d0e;
+  --project-alpha-warning-active: #713f12;
+  --project-alpha-warning-soft: #fffbeb;
+  --project-alpha-warning-soft-border: #fde68a;
+  --project-alpha-danger: #dc2626;
+  --project-alpha-danger-hover: #b91c1c;
+  --project-alpha-danger-active: #991b1b;
+  --project-alpha-danger-soft: #fef2f2;
+  --project-alpha-info: #475569;
+  --project-alpha-info-hover: #334155;
+  --project-alpha-info-active: #1e293b;
+  --project-alpha-info-soft: #f8fafc;
+  --project-alpha-info-soft-border: #cbd5e1;
+  --project-alpha-accent-purple: #7c3aed;
+  --project-alpha-font-family: Arial, "Microsoft Yahei", "微软雅黑", Helvetica, sans-serif;
+  --project-alpha-font-size-xs: 12px;
+  --project-alpha-font-size-sm: 13px;
+  --project-alpha-font-size-base: 14px;
+  --project-alpha-font-size-md: 15px;
+  --project-alpha-font-size-lg: 16px;
+  --project-alpha-font-size-xl: 18px;
+  --project-alpha-line-height-xs: 18px;
+  --project-alpha-line-height-sm: 20px;
+  --project-alpha-line-height-base: 22px;
+  --project-alpha-line-height-lg: 24px;
+  --project-alpha-line-height-xl: 28px;
+  --project-alpha-font-weight-regular: 400;
+  --project-alpha-font-weight-medium: 500;
+  --project-alpha-font-weight-semibold: 600;
+  --project-alpha-font-weight-bold: 700;
+  --project-alpha-space-1: 4px;
+  --project-alpha-space-2: 8px;
+  --project-alpha-space-3: 12px;
+  --project-alpha-space-4: 16px;
+  --project-alpha-space-5: 20px;
+  --project-alpha-space-6: 24px;
+  --project-alpha-space-8: 32px;
+  --project-alpha-control-height-sm: 28px;
+  --project-alpha-control-height-base: 32px;
+  --project-alpha-control-height-lg: 36px;
+  --project-alpha-table-font-size: 13px;
+  --project-alpha-table-header-height: 30px;
+  --project-alpha-table-row-height: 30px;
+  --project-alpha-table-cell-padding-y: 3px;
+  --project-alpha-table-cell-padding-x: 10px;
+  --project-alpha-table-header-bg: #f8fafc;
+  --project-alpha-table-row-hover-bg: #f9fbff;
+  --project-alpha-table-toolbar-bg: #fbfcfe;
+  --project-alpha-shadow-none: none;
+  --project-alpha-shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --project-alpha-shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.06);
+  --project-alpha-shadow-popover: 0 8px 24px rgba(15, 23, 42, 0.1);
+  --project-alpha-shadow-dialog: 0 18px 48px rgba(15, 23, 42, 0.14);
+  --project-alpha-radius-sm: 4px;
+  --project-alpha-radius-md: 6px;
+  --project-alpha-radius-lg: 8px;
+  --project-alpha-page-padding: 16px;
+  --project-alpha-shell-header-height: 88px;
+  --project-alpha-shell-header-row-height: 44px;
+  --project-alpha-shell-tabs-height: 44px;
+  --el-color-primary: var(--project-alpha-primary);
+  --el-color-primary-light-3: var(--project-alpha-primary-hover);
+  --el-color-primary-dark-2: var(--project-alpha-primary-active);
+  --el-color-success: var(--project-alpha-success);
+  --el-color-warning: var(--project-alpha-warning);
+  --el-color-danger: var(--project-alpha-danger);
+  --el-color-info: var(--project-alpha-info);
+  --el-font-size-base: var(--project-alpha-font-size-base);
+  --el-font-size-small: var(--project-alpha-font-size-sm);
+  --el-border-radius-base: var(--project-alpha-radius-sm);
+}
+
+#app {
+  height: 100%;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  color: var(--project-alpha-text-primary);
+  font-size: var(--project-alpha-font-size-base);
+  line-height: var(--project-alpha-line-height-base);
+  font-family: var(--project-alpha-font-family);
+  background: var(--project-alpha-page-bg);
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+
+  box-sizing: border-box;
+}
+
+a:focus,
+a:active {
+  color: var(--project-alpha-primary);
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+  font-weight: 400;
+}
+input[type="password"]::-ms-reveal {
+  display: none;
+}
+input::-ms-reveal {
+  display: none;
+}
+input::-ms-clear {
+  display: none;
+}
+input::-o-clear {
+  display: none;
+}
+.password-input::-ms-reveal,
+.password-input::-ms-clear {
+  display: none;
+}
+.n-input .n-input__input,
+.n-input .n-input__textarea {
+  overflow: none !important;
+}
+.el-button {
+  border-radius: var(--project-alpha-radius-sm) !important;
+  font-size: var(--project-alpha-font-size-sm);
+  font-weight: var(--project-alpha-font-weight-medium);
+}
+
+.el-button:not(.el-button--small):not(.el-button--large) {
+  min-height: var(--project-alpha-control-height-base);
+}
+
+.el-button--primary {
+  --el-button-bg-color: var(--project-alpha-primary);
+  --el-button-border-color: var(--project-alpha-primary);
+  --el-button-hover-bg-color: var(--project-alpha-primary-hover);
+  --el-button-hover-border-color: var(--project-alpha-primary-hover);
+  --el-button-active-bg-color: var(--project-alpha-primary-active);
+  --el-button-active-border-color: var(--project-alpha-primary-active);
+}
+
+.el-button.is-plain.el-button--primary {
+  --el-button-bg-color: var(--project-alpha-primary-soft);
+  --el-button-border-color: var(--project-alpha-primary-soft-border);
+  --el-button-text-color: var(--project-alpha-primary);
+  --el-button-hover-bg-color: var(--project-alpha-primary);
+  --el-button-hover-border-color: var(--project-alpha-primary);
+  --el-button-hover-text-color: #fff;
+}
+
+.el-button--danger {
+  --el-button-bg-color: var(--project-alpha-danger);
+  --el-button-border-color: var(--project-alpha-danger);
+  --el-button-hover-bg-color: var(--project-alpha-danger-hover);
+  --el-button-hover-border-color: var(--project-alpha-danger-hover);
+  --el-button-active-bg-color: var(--project-alpha-danger-active);
+  --el-button-active-border-color: var(--project-alpha-danger-active);
+}
+
+.el-button--success {
+  --el-button-bg-color: var(--project-alpha-success);
+  --el-button-border-color: var(--project-alpha-success);
+  --el-button-hover-bg-color: var(--project-alpha-success-hover);
+  --el-button-hover-border-color: var(--project-alpha-success-hover);
+  --el-button-active-bg-color: var(--project-alpha-success-active);
+  --el-button-active-border-color: var(--project-alpha-success-active);
+}
+
+.el-button.is-plain.el-button--success {
+  --el-button-bg-color: var(--project-alpha-success-soft);
+  --el-button-border-color: var(--project-alpha-success-soft-border);
+  --el-button-text-color: var(--project-alpha-success);
+}
+
+.el-button--warning {
+  --el-button-bg-color: var(--project-alpha-warning);
+  --el-button-border-color: var(--project-alpha-warning);
+  --el-button-hover-bg-color: var(--project-alpha-warning-hover);
+  --el-button-hover-border-color: var(--project-alpha-warning-hover);
+  --el-button-active-bg-color: var(--project-alpha-warning-active);
+  --el-button-active-border-color: var(--project-alpha-warning-active);
+}
+
+.el-button.is-plain.el-button--warning {
+  --el-button-bg-color: var(--project-alpha-warning-soft);
+  --el-button-border-color: var(--project-alpha-warning-soft-border);
+  --el-button-text-color: var(--project-alpha-warning);
+}
+
+.el-button--info {
+  --el-button-bg-color: var(--project-alpha-info);
+  --el-button-border-color: var(--project-alpha-info);
+  --el-button-hover-bg-color: var(--project-alpha-info-hover);
+  --el-button-hover-border-color: var(--project-alpha-info-hover);
+  --el-button-active-bg-color: var(--project-alpha-info-active);
+  --el-button-active-border-color: var(--project-alpha-info-active);
+}
+
+.el-button.is-plain.el-button--info {
+  --el-button-bg-color: var(--project-alpha-info-soft);
+  --el-button-border-color: var(--project-alpha-info-soft-border);
+  --el-button-text-color: var(--project-alpha-info);
+}
+
+.el-input__wrapper,
+.el-select__wrapper,
+.el-textarea__inner {
+  min-height: var(--project-alpha-control-height-base);
+  border-radius: var(--project-alpha-radius-sm) !important;
+  box-shadow: 0 0 0 1px var(--project-alpha-border) inset !important;
+}
+
+.el-input__wrapper:hover,
+.el-select__wrapper:hover,
+.el-textarea__inner:hover {
+  box-shadow: 0 0 0 1px var(--project-alpha-border-strong) inset !important;
+}
+
+.el-input__wrapper.is-focus,
+.el-select__wrapper.is-focused,
+.el-textarea__inner:focus {
+  box-shadow: 0 0 0 1px var(--project-alpha-primary) inset !important;
+}
+
+.el-card {
+  border-color: var(--project-alpha-border) !important;
+  border-radius: var(--project-alpha-radius-md) !important;
+}
+
+.el-card.is-always-shadow {
+  box-shadow: none !important;
+}
+
+.el-card__header {
+  min-height: 52px;
+  padding: 14px 18px !important;
+  border-bottom: 1px solid var(--project-alpha-border-light) !important;
+  color: var(--project-alpha-text-primary);
+  font-size: var(--project-alpha-font-size-lg);
+  font-weight: var(--project-alpha-font-weight-semibold);
+}
+
+.el-card__body {
+  padding: 0 !important;
+}
+
+.el-table {
+  color: var(--project-alpha-text-primary);
+  font-size: var(--project-alpha-table-font-size);
+}
+
+.el-table th.el-table__cell {
+  height: var(--project-alpha-table-header-height);
+  background: var(--project-alpha-table-header-bg) !important;
+  color: var(--project-alpha-text-secondary);
+  font-weight: var(--project-alpha-font-weight-semibold);
+}
+
+.el-table .el-table__cell {
+  height: var(--project-alpha-table-row-height);
+  padding: var(--project-alpha-table-cell-padding-y) 0;
+}
+
+.el-table .cell {
+  min-height: 18px;
+  line-height: 18px;
+  padding-right: var(--project-alpha-table-cell-padding-x);
+  padding-left: var(--project-alpha-table-cell-padding-x);
+}
+
+.el-table .el-tag {
+  height: 20px;
+  padding: 0 6px;
+  line-height: 18px;
+}
+
+.el-table__row:hover > td.el-table__cell {
+  background: var(--project-alpha-table-row-hover-bg) !important;
+}
+
+.el-tag {
+  border-radius: var(--project-alpha-radius-sm);
+}
+
+.el-dialog {
+  padding: 0 !important;
+  border-radius: var(--project-alpha-radius-md) !important;
+
+}
+.el-dialog__header {
+  height: 48px;
+  margin: 0 !important;
+  border-bottom: 1px solid var(--project-alpha-border);
+  border-radius: var(--project-alpha-radius-md) var(--project-alpha-radius-md) 0 0;
+  background: var(--project-alpha-panel-bg);
+}
+.el-dialog__title {
+  color: var(--project-alpha-text-primary) !important;
+  line-height: 48px !important;
+  padding-left: 18px;
+  font-size: var(--project-alpha-font-size-lg) !important;
+  font-weight: var(--project-alpha-font-weight-semibold);
+}
+
+.el-dialog__body {
+
+  padding: 24px ;
+  color: var(--project-alpha-text-primary) !important;
+}
+.el-dialog__footer{
+ 
+  padding:0 20px  20px 0px !important;
+ 
+}
+.el-statistic__head {
+  font-size: var(--project-alpha-font-size-base);
+}
+.el-statistic__content{
+  font-size: var(--project-alpha-font-size-base);
+}
+.el-drawer__header {
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+}
+:focus-visible {
+  outline: 2px solid var(--project-alpha-primary-soft-border);
+  outline-offset: 2px;
+}
+.el-time-panel{
+width: 160px;
+}

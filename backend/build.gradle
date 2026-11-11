@@ -1,0 +1,99 @@
+/**
+ * Alpha 应用与 Agent 运行时依赖。
+ * @author Andersen
+ */
+plugins {
+    id 'java'
+    id 'org.springframework.boot'
+    id 'io.spring.dependency-management'
+}
+
+java {
+    toolchain { languageVersion = JavaLanguageVersion.of(21) }
+}
+
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.ai:spring-ai-bom:1.1.2'
+    }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    // 沿用 Zero 的 Boot 3 MyBatis Plus 与动态数据源版本。
+    implementation 'com.baomidou:mybatis-plus-spring-boot3-starter:3.5.7'
+    implementation 'com.baomidou:dynamic-datasource-spring-boot3-starter:4.3.1'
+    implementation 'org.flywaydb:flyway-core'
+    implementation 'org.flywaydb:flyway-database-postgresql'
+    runtimeOnly 'org.postgresql:postgresql'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'com.alibaba.cloud.ai:spring-ai-alibaba-agent-framework:1.1.2.0'
+    // 显式装配模型，默认联调模式不创建云模型，也不要求模型密钥。
+    implementation 'com.alibaba.cloud.ai:spring-ai-alibaba-dashscope:1.1.2.1'
+    // 只引入客户端，不启用依赖环境密钥的自动装配；用于兼容平台动态接入。
+    implementation 'org.springframework.ai:spring-ai-openai'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    // H2 只用于快速/文件重开测试，不再作为应用运行数据库。
+    testRuntimeOnly 'com.h2database:h2'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.compilerArgs += '-parameters'
+}
+
+tasks.named('test') { useJUnitPlatform { excludeTags 'postgres', 'prototype-live', 'prototype-browser' } }
+// 显式启动隔离 H2 与合成执行器，供真实工作台浏览器验收；不调用付费模型。
+tasks.register('prototypeBrowserTest', Test) {
+    group = 'verification'
+    description = '启动隔离的原型工作台浏览器验收夹具'
+    testClassesDirs = sourceSets.test.output.classesDirs
+    classpath = sourceSets.test.runtimeClasspath
+    workingDir rootProject.projectDir
+    useJUnitPlatform { includeTags 'prototype-browser' }
+    outputs.upToDateWhen { false }
+    testLogging { events 'passed', 'failed'; showStandardStreams = true }
+}
+// 显式任务连接本地 PostgreSQL，在隔离 schema 中验证真实数据库与迁移。
+tasks.register('postgresTest', Test) {
+    group = 'verification'
+    description = '在本地 PostgreSQL 隔离 schema 验证 MyBatis Plus 持久化'
+    testClassesDirs = sourceSets.test.output.classesDirs
+    classpath = sourceSets.test.runtimeClasspath
+    workingDir rootProject.projectDir
+    useJUnitPlatform { includeTags 'postgres' }
+    outputs.upToDateWhen { false }
+}
+// 显式真实模型验收使用随机 PostgreSQL schema，普通 test/postgresTest 不触发模型费用。
+tasks.register('prototypeLiveTest', Test) {
+    group = 'verification'
+    description = '显式运行真实模型、隔离 Worker 与 PostgreSQL 原型闭环'
+    testClassesDirs = sourceSets.test.output.classesDirs
+    classpath = sourceSets.test.runtimeClasspath
+    workingDir rootProject.projectDir
+    useJUnitPlatform { includeTags 'prototype-live' }
+    outputs.upToDateWhen { false }
+    testLogging { events 'passed', 'failed'; showStandardStreams = true }
+    doFirst {
+        if (System.getenv('ALPHA_PROTOTYPE_LIVE_TEST') != 'true') {
+            throw new GradleException('真实模型验收必须显式设置 ALPHA_PROTOTYPE_LIVE_TEST=true')
+        }
+    }
+}
+// 与根目录本地环境文件、java -jar 的推荐启动位置保持一致。
+tasks.named('bootRun') { workingDir rootProject.projectDir }
+tasks.named('jar') { enabled = false }
+
+// 开发启动不触发 npm；发布打包时才把前端产物放入 JAR 的 static 目录。
+tasks.named('bootJar') {
+    // 当发布任务同时请求检查时，测试通过后才产出 JAR。
+    mustRunAfter tasks.named('check'), rootProject.tasks.named('frontendTest')
+    dependsOn rootProject.tasks.named('frontendBuild')
+    archiveFileName = "${rootProject.name}.jar"
+    from(rootProject.layout.projectDirectory.dir('frontend/dist')) {
+        into 'BOOT-INF/classes/static'
+    }
+}

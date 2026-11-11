@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "id": "zero-admin",
+  "revision": 2,
+  "name": "Zero 管理端原型",
+  "sourceCommit": "6e07bd5a78804b26ad2904c151e2bf3470631c4c",
+  "sourceVersion": "zero-v3.2.1",
+  "mode": "demo",
+  "provenance": "本地模板联调，未调用大模型；样板行为不表示目标产品需求已经确认。",
+  "supportedPageTypes": [
+    "LIST",
+    "FORM",
+    "DETAIL"
+  ],
+  "supportedActions": [
+    "QUERY",
+    "RESET_QUERY",
+    "PAGINATE",
+    "CREATE",
+    "EDIT",
+    "DETAIL",
+    "CANCEL",
+    "RESET_DEMO"
+  ],
+  "writablePaths": [
+    "src/features/generated/",
+    "src/mock/generated/"
+  ],
+  "allowedExtensions": [
+    ".vue",
+    ".js",
+    ".json"
+  ],
+  "allowedImports": [
+    "vue",
+    "vue-router",
+    "element-plus",
+    "@element-plus/icons-vue",
+    "@/platform/components.js"
+  ],
+  "allowedImportPrefixes": [
+    "@/features/generated/",
+    "@/mock/generated/"
+  ],
+  "componentContracts": "component-contracts.md",
+  "sourceManifest": "zero-source.json",
+  "build": {
+    "command": "npm run build",
+    "outputDirectory": "dist",
+    "base": "./"
+  },
+  "toolchain": {
+    "id": "playwright-1.58.2-noble",
+    "nodeMajor": 24,
+    "vite": "5.4.21",
+    "vue": "3.5.13",
+    "lockfile": "package-lock.json"
+  },
+  "fixture": {
+    "name": "personnel-sample",
+    "entryHash": "#/personnel",
+    "routes": [
+      "/personnel",
+      "/personnel/person-001"
+    ],
+    "pageIds": [
+      "personnel-list",
+      "personnel-form",
+      "personnel-detail"
+    ],
+    "initialRecordCount": 26,
+    "initialPageSize": 20,
+    "sampleRecord": {
+      "id": "person-001",
+      "name": "张明",
+      "department": "研发部"
+    }
+  },
+  "limits": {
+    "maxPages": 10,
+    "maxFiles": 100,
+    "maxFileBytes": 262144,
+    "maxTotalBytes": 5242880
+  },
+  "lockSha256": "8740f683dbae1cd08f000a97c4f94e6cf5f17b477600f1018e74c9b86941dd2f"
+}

@@ -1,0 +1,56 @@
+/* 字段说明沿用全局设计令牌，帮助按钮不占用输入框内部的操作区域。 */
+.field-help-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 22px;
+  margin-left: var(--project-alpha-space-1, 4px);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--project-alpha-text-muted, #6b7280);
+  font-size: var(--project-alpha-font-size-sm, 13px);
+  cursor: help;
+  vertical-align: middle;
+}
+.field-help-button:hover,
+.field-help-button:focus-visible {
+  color: var(--project-alpha-primary, #2563eb);
+}
+.field-help-button:focus-visible {
+  outline: 2px solid var(--project-alpha-primary-soft-border, #bfdbfe);
+  outline-offset: 1px;
+  border-radius: var(--project-alpha-radius-sm, 4px);
+}
+.field-help-popper {
+  max-width: min(360px, calc(100vw - 24px));
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: var(--project-alpha-line-height-sm, 20px);
+}
+.field-help-inline {
+  flex-basis: 100%;
+  margin-top: var(--project-alpha-space-1, 4px);
+  color: var(--project-alpha-text-muted, #6b7280);
+  font-size: var(--project-alpha-font-size-xs, 12px);
+  line-height: var(--project-alpha-line-height-xs, 18px);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+/* 无障碍说明脱离布局，避免影响表单标签宽度及输入内容的可用空间。 */
+.field-help-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+/* 批量弹层在窄视口内收缩，保留既有桌面宽度。 */
+.query-panel-batch-popper {
+  max-width: calc(100vw - 24px);
+}

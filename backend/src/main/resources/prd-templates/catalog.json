@@ -1,0 +1,902 @@
+{
+  "legacyGlobalSections": [
+    {
+      "key": "background",
+      "title": "背景与问题",
+      "hint": "说明产品背景、现状与要解决的问题；只记录已知事实。"
+    },
+    {
+      "key": "objectives",
+      "title": "目标",
+      "hint": "说明产品目标、使用角色及其需求，不编造指标。"
+    },
+    {
+      "key": "scope",
+      "title": "交付范围",
+      "hint": "说明本期覆盖的功能与产品端；未明确范围标注待确认。"
+    },
+    {
+      "key": "workflows",
+      "title": "业务流程",
+      "hint": "描述参与者、触发条件、步骤、输入输出和结束条件。"
+    },
+    {
+      "key": "rules",
+      "title": "业务规则",
+      "hint": "说明跨模块业务约定、状态流转与规则优先级。"
+    },
+    {
+      "key": "exceptions",
+      "title": "异常路径",
+      "hint": "说明跨模块失败、冲突与恢复处理。"
+    },
+    {
+      "key": "acceptance",
+      "title": "验收标准",
+      "hint": "列出整体验收场景、操作和预期结果。"
+    },
+    {
+      "key": "nonfunctional",
+      "title": "非功能边界",
+      "hint": "说明性能、安全、兼容性等要求；未明确指标标注待确认。"
+    },
+    {
+      "key": "exclusions",
+      "title": "排除范围",
+      "hint": "明确本期不包含的功能，未知范围不要直接当作不包含。"
+    }
+  ],
+  "templates": [
+    {
+      "id": "management",
+      "revision": 1,
+      "name": "管理系统",
+      "description": "面向管理后台和业务系统，重点描述数据列表、查询、表单、权限与业务流程。",
+      "guidance": "按业务模块和页面描述管理系统。列表明确字段顺序、筛选条件、排序分页与按钮；表单区分字段和校验；说明角色权限和数据范围。未明确规则保留待确认。",
+      "defaultPageType": "LIST",
+      "globalSections": [
+        {
+          "key": "background",
+          "title": "背景与问题",
+          "hint": "说明产品背景、现状与要解决的问题；只记录已知事实。"
+        },
+        {
+          "key": "objectives",
+          "title": "目标与使用角色",
+          "hint": "说明产品目标、使用角色及其需求，不编造指标。"
+        },
+        {
+          "key": "scope",
+          "title": "本期范围",
+          "hint": "说明本期覆盖的功能与产品端；未明确范围标注待确认。"
+        },
+        {
+          "key": "workflows",
+          "title": "功能结构与核心流程",
+          "hint": "描述参与者、触发条件、步骤、输入输出和结束条件。"
+        },
+        {
+          "key": "rules",
+          "title": "全局约定与跨模块规则",
+          "hint": "说明跨模块业务约定、状态流转与规则优先级。"
+        },
+        {
+          "key": "exceptions",
+          "title": "跨模块异常处理",
+          "hint": "说明跨模块失败、冲突与恢复处理。"
+        },
+        {
+          "key": "acceptance",
+          "title": "整体验收",
+          "hint": "列出整体验收场景、操作和预期结果。"
+        },
+        {
+          "key": "nonfunctional",
+          "title": "非功能要求",
+          "hint": "说明性能、安全、兼容性等要求；未明确指标标注待确认。"
+        },
+        {
+          "key": "exclusions",
+          "title": "不包含内容",
+          "hint": "明确本期不包含的功能，未知范围不要直接当作不包含。"
+        }
+      ],
+      "moduleSections": [
+        {
+          "key": "overview",
+          "title": "模块目标与范围",
+          "hint": "说明用途、使用者、范围、入口和与其他页面的关系；未明确的规则标注待确认。"
+        },
+        {
+          "key": "rules",
+          "title": "业务规则与关联影响",
+          "hint": "状态流转、计算口径、规则优先级和跨模块影响。未知规则标注待确认，不自行假设。"
+        },
+        {
+          "key": "permissions",
+          "title": "权限与数据范围",
+          "hint": "谁能看哪些数据、执行哪些操作；如复用全局或模块规则，请明确引用。"
+        },
+        {
+          "key": "acceptance",
+          "title": "模块验收场景",
+          "hint": "场景 | 前置条件 | 操作 | 预期结果；待确认规则明确注明依赖的问题编号。"
+        }
+      ],
+      "pageSections": [
+        {
+          "key": "overview",
+          "title": "页面说明与入口",
+          "hint": "说明用途、使用者、范围、入口和与其他页面的关系；未明确的规则标注待确认。"
+        },
+        {
+          "key": "fields",
+          "title": "展示字段",
+          "hint": "可使用 Markdown 表格：顺序 | 字段 | 业务含义 | 展示格式与空值 | 点击行为。展示字段不等于全部数据字段。"
+        },
+        {
+          "key": "search",
+          "title": "搜索条件",
+          "hint": "条件 | 控件 | 单选或多选 | 默认值 | 匹配方式 | 选项来源；说明组合、查询和重置规则。"
+        },
+        {
+          "key": "sorting",
+          "title": "排序与分页",
+          "hint": "默认排序、升降序、同值次级排序、可排序列、分页方式和页容量。未明确的默认值标注待确认。"
+        },
+        {
+          "key": "actions",
+          "title": "按钮与操作",
+          "hint": "按钮 | 位置 | 可用条件 | 动作或打开方式 | 成功反馈 | 失败处理。"
+        },
+        {
+          "key": "form",
+          "title": "表单字段与校验",
+          "hint": "字段 | 控件 | 必填 | 默认值 | 校验 | 新增可填 | 编辑可改；区分系统生成和用户填写字段。"
+        },
+        {
+          "key": "interactions",
+          "title": "交互与联动",
+          "hint": "字段联动、视图切换、跳转、保存与取消，以及操作对关联数据的影响。"
+        },
+        {
+          "key": "states",
+          "title": "加载、空态与异常",
+          "hint": "加载中、空数据、筛选无结果、失败、处理中、禁用状态及恢复方式。"
+        },
+        {
+          "key": "rules",
+          "title": "页面业务规则",
+          "hint": "状态流转、计算口径、规则优先级和跨模块影响。未知规则标注待确认，不自行假设。"
+        },
+        {
+          "key": "permissions",
+          "title": "页面权限",
+          "hint": "谁能看哪些数据、执行哪些操作；如复用全局或模块规则，请明确引用。"
+        },
+        {
+          "key": "acceptance",
+          "title": "页面验收场景",
+          "hint": "场景 | 前置条件 | 操作 | 预期结果；待确认规则明确注明依赖的问题编号。"
+        }
+      ],
+      "pageTypes": [
+        {
+          "key": "LIST",
+          "title": "列表",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "fields",
+            "search",
+            "sorting"
+          ]
+        },
+        {
+          "key": "FORM",
+          "title": "表单",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "form",
+            "interactions"
+          ]
+        },
+        {
+          "key": "DETAIL",
+          "title": "详情",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "fields"
+          ]
+        },
+        {
+          "key": "TREE",
+          "title": "树形列表",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "fields",
+            "search",
+            "sorting"
+          ]
+        },
+        {
+          "key": "CALENDAR",
+          "title": "日历",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "fields",
+            "interactions"
+          ]
+        },
+        {
+          "key": "GANTT",
+          "title": "甘特图",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "fields",
+            "interactions"
+          ]
+        },
+        {
+          "key": "DAG",
+          "title": "关系图",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "fields",
+            "interactions"
+          ]
+        },
+        {
+          "key": "CUSTOM",
+          "title": "自定义",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "fields",
+            "interactions"
+          ]
+        },
+        {
+          "key": "HOME",
+          "title": "首页",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "fields",
+            "interactions"
+          ]
+        },
+        {
+          "key": "FEED",
+          "title": "内容流",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "fields",
+            "interactions"
+          ]
+        },
+        {
+          "key": "FLOW",
+          "title": "引导 / 步骤流程",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "fields",
+            "interactions"
+          ]
+        }
+      ],
+      "requiredGlobalSections": [
+        "background",
+        "objectives",
+        "scope",
+        "workflows",
+        "rules",
+        "nonfunctional",
+        "exclusions"
+      ],
+      "requiredModuleSections": [
+        "overview",
+        "rules",
+        "permissions",
+        "acceptance"
+      ]
+    },
+    {
+      "id": "mobile",
+      "revision": 1,
+      "name": "App / 小程序",
+      "description": "面向移动产品，重点描述内容组织、导航、触控交互、授权以及弱网和异常恢复。",
+      "guidance": "按用户任务描述 App / 小程序，同时允许管理后台页面。首页和内容流描述内容区域、来源、展示顺序、导航入口、刷新和加载；关注触控、登录、系统授权、弱网、离线、推送跳转与返回时状态保留。不得将未知权限或默认行为补造成事实。",
+      "defaultPageType": "HOME",
+      "globalSections": [
+        {
+          "key": "background",
+          "title": "背景与问题",
+          "hint": "说明产品背景、现状与要解决的问题；只记录已知事实。"
+        },
+        {
+          "key": "objectives",
+          "title": "目标与用户场景",
+          "hint": "目标用户、使用场景和任务；不编造用户规模或增长指标。"
+        },
+        {
+          "key": "scope",
+          "title": "本期范围",
+          "hint": "说明本期覆盖的功能与产品端；未明确范围标注待确认。"
+        },
+        {
+          "key": "workflows",
+          "title": "用户旅程与核心流程",
+          "hint": "描述入口、导航、关键用户任务、登录或授权前后流程，以及中断与返回。"
+        },
+        {
+          "key": "rules",
+          "title": "全局约定与跨模块规则",
+          "hint": "说明跨模块业务约定、状态流转与规则优先级。"
+        },
+        {
+          "key": "exceptions",
+          "title": "跨模块异常处理",
+          "hint": "说明跨模块失败、冲突与恢复处理。"
+        },
+        {
+          "key": "acceptance",
+          "title": "整体验收",
+          "hint": "列出整体验收场景、操作和预期结果。"
+        },
+        {
+          "key": "nonfunctional",
+          "title": "非功能要求",
+          "hint": "说明适配平台、设备兼容、性能、隐私、弱网或离线要求；未知指标标注待确认。"
+        },
+        {
+          "key": "exclusions",
+          "title": "不包含内容",
+          "hint": "明确本期不包含的功能，未知范围不要直接当作不包含。"
+        }
+      ],
+      "moduleSections": [
+        {
+          "key": "overview",
+          "title": "模块目标与范围",
+          "hint": "说明用途、使用者、范围、入口和与其他页面的关系；未明确的规则标注待确认。"
+        },
+        {
+          "key": "rules",
+          "title": "业务规则与关联影响",
+          "hint": "状态流转、计算口径、规则优先级和跨模块影响。未知规则标注待确认，不自行假设。"
+        },
+        {
+          "key": "permissions",
+          "title": "权限与数据范围",
+          "hint": "谁能看哪些数据、执行哪些操作；如复用全局或模块规则，请明确引用。"
+        },
+        {
+          "key": "acceptance",
+          "title": "模块验收场景",
+          "hint": "场景 | 前置条件 | 操作 | 预期结果；待确认规则明确注明依赖的问题编号。"
+        }
+      ],
+      "pageSections": [
+        {
+          "key": "overview",
+          "title": "页面说明与入口",
+          "hint": "说明用途、使用者、范围、入口和与其他页面的关系；未明确的规则标注待确认。"
+        },
+        {
+          "key": "fields",
+          "title": "内容与展示元素",
+          "hint": "区域或元素 | 内容来源 | 展示顺序 | 格式与缺省 | 点击行为；区分首页内容分区、内容卡片和业务字段。"
+        },
+        {
+          "key": "search",
+          "title": "搜索条件",
+          "hint": "条件 | 控件 | 单选或多选 | 默认值 | 匹配方式 | 选项来源；说明组合、查询和重置规则。"
+        },
+        {
+          "key": "sorting",
+          "title": "内容顺序与加载",
+          "hint": "说明内容排列、推荐或排序依据、下拉刷新、滚动加载与加载结束；列表可继续写分页规则。"
+        },
+        {
+          "key": "actions",
+          "title": "操作入口与触控",
+          "hint": "入口 | 位置 | 可用条件 | 点击或手势 | 跳转方式 | 成功与失败反馈。"
+        },
+        {
+          "key": "form",
+          "title": "表单字段与校验",
+          "hint": "字段 | 控件 | 必填 | 默认值 | 校验 | 新增可填 | 编辑可改；区分系统生成和用户填写字段。"
+        },
+        {
+          "key": "interactions",
+          "title": "导航与交互",
+          "hint": "导航层级、返回、手势、刷新、页面跳转、输入和滚动位置保留；登录或授权触发条件标注清楚。"
+        },
+        {
+          "key": "states",
+          "title": "页面状态与恢复",
+          "hint": "加载、空内容、弱网、离线、失败、登录失效、拒绝授权和重试；仅描述实际涉及的状态。"
+        },
+        {
+          "key": "rules",
+          "title": "页面业务规则",
+          "hint": "状态流转、计算口径、规则优先级和跨模块影响。未知规则标注待确认，不自行假设。"
+        },
+        {
+          "key": "permissions",
+          "title": "访问与授权规则",
+          "hint": "谁可以访问、登录要求、系统权限授权时机、拒绝后处理；未明确的权限不能自行假设。"
+        },
+        {
+          "key": "acceptance",
+          "title": "页面验收场景",
+          "hint": "场景 | 前置条件 | 操作 | 预期结果；待确认规则明确注明依赖的问题编号。"
+        }
+      ],
+      "pageTypes": [
+        {
+          "key": "HOME",
+          "title": "首页",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "fields",
+            "interactions"
+          ]
+        },
+        {
+          "key": "FEED",
+          "title": "内容流",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "fields",
+            "interactions"
+          ]
+        },
+        {
+          "key": "DETAIL",
+          "title": "详情",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "fields"
+          ]
+        },
+        {
+          "key": "FORM",
+          "title": "表单",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "form",
+            "interactions"
+          ]
+        },
+        {
+          "key": "FLOW",
+          "title": "引导 / 步骤流程",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "fields",
+            "interactions"
+          ]
+        },
+        {
+          "key": "CUSTOM",
+          "title": "自定义",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "fields",
+            "interactions"
+          ]
+        },
+        {
+          "key": "LIST",
+          "title": "列表",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "fields",
+            "search",
+            "sorting"
+          ]
+        },
+        {
+          "key": "TREE",
+          "title": "树形列表",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "fields",
+            "search",
+            "sorting"
+          ]
+        },
+        {
+          "key": "CALENDAR",
+          "title": "日历",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "fields",
+            "interactions"
+          ]
+        },
+        {
+          "key": "GANTT",
+          "title": "甘特图",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "fields",
+            "interactions"
+          ]
+        },
+        {
+          "key": "DAG",
+          "title": "关系图",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "fields",
+            "interactions"
+          ]
+        }
+      ],
+      "requiredGlobalSections": [
+        "background",
+        "objectives",
+        "scope",
+        "workflows",
+        "rules",
+        "nonfunctional",
+        "exclusions"
+      ],
+      "requiredModuleSections": [
+        "overview",
+        "rules",
+        "permissions",
+        "acceptance"
+      ]
+    },
+    {
+      "id": "general",
+      "revision": 1,
+      "name": "通用产品",
+      "description": "面向尚未确定产品形态或多端协作的产品，以用户任务、能力边界和交互规则组织需求。",
+      "guidance": "优先表达用户目标、业务能力、输入输出与验收。根据实际页面选择类型，允许 App 与管理后台混合。无需强行套用后台列表字段；不适用的章节说明原因，未知规则保留待确认。",
+      "defaultPageType": "CUSTOM",
+      "globalSections": [
+        {
+          "key": "background",
+          "title": "背景与问题",
+          "hint": "说明产品背景、现状与要解决的问题；只记录已知事实。"
+        },
+        {
+          "key": "objectives",
+          "title": "目标与使用者",
+          "hint": "说明产品目标、使用角色及其需求，不编造指标。"
+        },
+        {
+          "key": "scope",
+          "title": "本期范围",
+          "hint": "说明本期覆盖的功能与产品端；未明确范围标注待确认。"
+        },
+        {
+          "key": "workflows",
+          "title": "核心场景与流程",
+          "hint": "描述参与者、触发条件、步骤、输入输出和结束条件。"
+        },
+        {
+          "key": "rules",
+          "title": "全局约定与跨模块规则",
+          "hint": "说明跨模块业务约定、状态流转与规则优先级。"
+        },
+        {
+          "key": "exceptions",
+          "title": "跨模块异常处理",
+          "hint": "说明跨模块失败、冲突与恢复处理。"
+        },
+        {
+          "key": "acceptance",
+          "title": "整体验收",
+          "hint": "列出整体验收场景、操作和预期结果。"
+        },
+        {
+          "key": "nonfunctional",
+          "title": "非功能要求",
+          "hint": "说明性能、安全、兼容性等要求；未明确指标标注待确认。"
+        },
+        {
+          "key": "exclusions",
+          "title": "不包含内容",
+          "hint": "明确本期不包含的功能，未知范围不要直接当作不包含。"
+        }
+      ],
+      "moduleSections": [
+        {
+          "key": "overview",
+          "title": "模块目标与范围",
+          "hint": "说明用途、使用者、范围、入口和与其他页面的关系；未明确的规则标注待确认。"
+        },
+        {
+          "key": "rules",
+          "title": "业务规则与关联影响",
+          "hint": "状态流转、计算口径、规则优先级和跨模块影响。未知规则标注待确认，不自行假设。"
+        },
+        {
+          "key": "permissions",
+          "title": "权限与数据范围",
+          "hint": "谁能看哪些数据、执行哪些操作；如复用全局或模块规则，请明确引用。"
+        },
+        {
+          "key": "acceptance",
+          "title": "模块验收场景",
+          "hint": "场景 | 前置条件 | 操作 | 预期结果；待确认规则明确注明依赖的问题编号。"
+        }
+      ],
+      "pageSections": [
+        {
+          "key": "overview",
+          "title": "页面说明与入口",
+          "hint": "说明用途、使用者、范围、入口和与其他页面的关系；未明确的规则标注待确认。"
+        },
+        {
+          "key": "fields",
+          "title": "内容与输出",
+          "hint": "展示内容或输出 | 来源 | 含义 | 格式 | 缺省处理；按产品实际形态描述，不强套数据列表。"
+        },
+        {
+          "key": "search",
+          "title": "搜索条件",
+          "hint": "条件 | 控件 | 单选或多选 | 默认值 | 匹配方式 | 选项来源；说明组合、查询和重置规则。"
+        },
+        {
+          "key": "sorting",
+          "title": "排序与分页",
+          "hint": "默认排序、升降序、同值次级排序、可排序列、分页方式和页容量。未明确的默认值标注待确认。"
+        },
+        {
+          "key": "actions",
+          "title": "用户操作",
+          "hint": "操作入口、前置条件、输入输出、完成反馈与失败处理。"
+        },
+        {
+          "key": "form",
+          "title": "表单字段与校验",
+          "hint": "字段 | 控件 | 必填 | 默认值 | 校验 | 新增可填 | 编辑可改；区分系统生成和用户填写字段。"
+        },
+        {
+          "key": "interactions",
+          "title": "交互与联动",
+          "hint": "字段联动、视图切换、跳转、保存与取消，以及操作对关联数据的影响。"
+        },
+        {
+          "key": "states",
+          "title": "加载、空态与异常",
+          "hint": "加载中、空数据、筛选无结果、失败、处理中、禁用状态及恢复方式。"
+        },
+        {
+          "key": "rules",
+          "title": "页面业务规则",
+          "hint": "状态流转、计算口径、规则优先级和跨模块影响。未知规则标注待确认，不自行假设。"
+        },
+        {
+          "key": "permissions",
+          "title": "访问与使用限制",
+          "hint": "谁能看哪些数据、执行哪些操作；如复用全局或模块规则，请明确引用。"
+        },
+        {
+          "key": "acceptance",
+          "title": "页面验收场景",
+          "hint": "场景 | 前置条件 | 操作 | 预期结果；待确认规则明确注明依赖的问题编号。"
+        }
+      ],
+      "pageTypes": [
+        {
+          "key": "CUSTOM",
+          "title": "自定义",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "fields",
+            "interactions"
+          ]
+        },
+        {
+          "key": "DETAIL",
+          "title": "详情",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "fields"
+          ]
+        },
+        {
+          "key": "FORM",
+          "title": "表单",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "form",
+            "interactions"
+          ]
+        },
+        {
+          "key": "FLOW",
+          "title": "引导 / 步骤流程",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "fields",
+            "interactions"
+          ]
+        },
+        {
+          "key": "HOME",
+          "title": "首页",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "fields",
+            "interactions"
+          ]
+        },
+        {
+          "key": "FEED",
+          "title": "内容流",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "fields",
+            "interactions"
+          ]
+        },
+        {
+          "key": "LIST",
+          "title": "列表",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "fields",
+            "search",
+            "sorting"
+          ]
+        },
+        {
+          "key": "TREE",
+          "title": "树形列表",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "fields",
+            "search",
+            "sorting"
+          ]
+        },
+        {
+          "key": "CALENDAR",
+          "title": "日历",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "fields",
+            "interactions"
+          ]
+        },
+        {
+          "key": "GANTT",
+          "title": "甘特图",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "fields",
+            "interactions"
+          ]
+        },
+        {
+          "key": "DAG",
+          "title": "关系图",
+          "requiredSections": [
+            "overview",
+            "actions",
+            "states",
+            "acceptance",
+            "fields",
+            "interactions"
+          ]
+        }
+      ],
+      "requiredGlobalSections": [
+        "background",
+        "objectives",
+        "scope",
+        "workflows",
+        "rules",
+        "nonfunctional",
+        "exclusions"
+      ],
+      "requiredModuleSections": [
+        "overview",
+        "rules",
+        "acceptance"
+      ]
+    }
+  ]
+}

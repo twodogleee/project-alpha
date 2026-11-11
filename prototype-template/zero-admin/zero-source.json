@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "commit": "6e07bd5a78804b26ad2904c151e2bf3470631c4c",
+  "version": "zero-v3.2.1",
+  "files": [
+    {
+      "upstreamPath": "src/components/crud/CrudDetail.vue",
+      "localPath": "src/components/crud/CrudDetail.vue",
+      "sha256": "faa6ee80de871e519a80303d316223cbd008a08a5b27b007d5fc2bc1180ca16a",
+      "adoption": "adapted-style",
+      "upstreamContentSha256": "d386706ba52319ee7f55d754cb666c8dc12b3bcb8666443c0e98aa8cd6169ed3"
+    },
+    {
+      "upstreamPath": "src/components/crud/CrudDetailItem.vue",
+      "localPath": "src/components/crud/CrudDetailItem.vue",
+      "sha256": "b0d5b1d6c99bfdbfcfa3041b090e34d451a3ab034c7fb17b58107078da03275a",
+      "adoption": "adapted-style",
+      "upstreamContentSha256": "08141bef1cf9617a8022e4cca12f26dc90f44a307a1b6ea6c8b97b13874ddb04"
+    },
+    {
+      "upstreamPath": "src/components/crud/CrudDialog.vue",
+      "localPath": "src/components/crud/CrudDialog.vue",
+      "sha256": "d3eaa9c3cfdad927fd1bad6a49ae79dd43d7b4df94670f140a3ce800f1f3edc2",
+      "adoption": "managed"
+    },
+    {
+      "upstreamPath": "src/components/crud/CrudDrawer.vue",
+      "localPath": "src/components/crud/CrudDrawer.vue",
+      "sha256": "1526d03664dbffef9b9838af34c1ec42025c5f1e386538bc1226d802ca5ae985",
+      "adoption": "adapted-style",
+      "upstreamContentSha256": "723e598961ee1f86f2f29be23ed7c97df5f209e773df5ff409ecb13aa1a4954c"
+    },
+    {
+      "upstreamPath": "src/components/crud/CrudHeader.vue",
+      "localPath": "src/components/crud/CrudHeader.vue",
+      "sha256": "08eb8e74e9554c309e9b28bfa12132368f110ea14865fbb87820e0731a984f3d",
+      "adoption": "adapted-style",
+      "upstreamContentSha256": "35813d7a808f48d78ec8aca2993da6d30318c2a5245433cc85f674f6da508b62"
+    },
+    {
+      "upstreamPath": "src/components/crud/crudModes.js",
+      "localPath": "src/components/crud/crudModes.js",
+      "sha256": "6ca68b0567f0866aeec6705e4a2e32837b5e1356a71f079ddd13de6d85e0eeb8",
+      "adoption": "managed"
+    },
+    {
+      "upstreamPath": "src/components/crud/detailLayout.js",
+      "localPath": "src/components/crud/detailLayout.js",
+      "sha256": "0f522e1f323f8078f7ffdd2fe97a2d473854be2bb9679c29d37751ffdf9f88ba",
+      "adoption": "managed"
+    },
+    {
+      "upstreamPath": "src/components/data/StatusTag.vue",
+      "localPath": "src/components/data/StatusTag.vue",
+      "sha256": "4ab24cc7c0d7a22a36c40fd9191b48d92596627baa94d6a46d44b3415f83b9f4",
+      "adoption": "adapted-style",
+      "upstreamContentSha256": "fc8a3b91323aac06e623c3bc8b9dcdb28757dd55e44f59daedc72d448f30a827"
+    },
+    {
+      "upstreamPath": "src/components/data/displayValue.js",
+      "localPath": "src/components/data/displayValue.js",
+      "sha256": "77d759842012257cf233e7cb6fa250c34e6abd7b96608f473c7322485cf00416",
+      "adoption": "managed"
+    },
+    {
+      "upstreamPath": "src/components/data/status.js",
+      "localPath": "src/components/data/status.js",
+      "sha256": "5d8470c373d5283e7f2dbfa23f5aa60568b9cf6363c7d0a7c7f692c8dc34888a",
+      "adoption": "managed"
+    },
+    {
+      "upstreamPath": "src/components/feedback/AsyncState.vue",
+      "localPath": "src/components/feedback/AsyncState.vue",
+      "sha256": "5e1070db6ef2409687bd6e69631996b99967b01ae43aa3eec93ea8532fa28a70",
+      "adoption": "adapted-style",
+      "upstreamContentSha256": "76b2b9ca14b2e908bcdba7784368d1f0131e5706283739ccb9456d07d80bfbe8"
+    },
+    {
+      "upstreamPath": "src/components/fieldSettingsPopover/index.vue",
+      "localPath": "src/components/fieldSettingsPopover/index.vue",
+      "sha256": "53df742eba883b28cf94a25c4f897fa381531391106cb1a54997e78ddc6691ba",
+      "adoption": "adapted-style",
+      "upstreamContentSha256": "996a3ac82a32b92b818aef1aec1cb50b7d73de5f8fa922a7b0de0ccaef7823ee"
+    },
+    {
+      "upstreamPath": "src/components/inputHelp/FieldHelp.vue",
+      "localPath": "src/components/inputHelp/FieldHelp.vue",
+      "sha256": "3466635865e9d7c368538265ab86b50afe689f476bf5b35f50b5fae31e907536",
+      "adoption": "managed"
+    },
+    {
+      "upstreamPath": "src/components/inputHelp/config.js",
+      "localPath": "src/components/inputHelp/config.js",
+      "sha256": "25c6a6eb4bc95a9f7da5adb4c061774928616d98f0afb1b9282ac45536f52a8b",
+      "adoption": "managed"
+    },
+    {
+      "upstreamPath": "src/components/inputHelp/fieldHelp.js",
+      "localPath": "src/components/inputHelp/fieldHelp.js",
+      "sha256": "b416dbda76ef6f312b6d26e00cfa63c77037e6fef1cad708913474897f6113c0",
+      "adoption": "managed"
+    },
+    {
+      "upstreamPath": "src/components/inputHelp/inputHelp.css",
+      "localPath": "src/components/inputHelp/inputHelp.css",
+      "sha256": "7ee89ba7071ec150634bdb92a8eae94181df339f86953d82508a4536834e53af",
+      "adoption": "adapted-style",
+      "upstreamContentSha256": "0ded8eafee41fd3aceda72a6a8065e605b5b635a156e0cc2b79eab2af700eab6"
+    },
+    {
+      "upstreamPath": "src/components/inputHelp/useInputHelp.js",
+      "localPath": "src/components/inputHelp/useInputHelp.js",
+      "sha256": "e63849d12c0fae180c4a09de165f5088f6213beba2bae70f3bb8a1703c7b765a",
+      "adoption": "managed"
+    },
+    {
+      "upstreamPath": "src/components/overlay/AppDialog.vue",
+      "localPath": "src/components/overlay/AppDialog.vue",
+      "sha256": "8e686087aada2fcc48650a490c0845b0f4044d059b5b1a4260426c344927475d",
+      "adoption": "adapted-style",
+      "upstreamContentSha256": "f1e052b40a42e044c886250324600a229d63edf46ff4215dae03e1cc5bba340e"
+    },
+    {
+      "upstreamPath": "src/components/overlay/useDialogSubmission.js",
+      "localPath": "src/components/overlay/useDialogSubmission.js",
+      "sha256": "6e2e34bf3c10b60633a020e04e2a858f36ccfc9369d158c9ba2a59dab7ec8133",
+      "adoption": "managed"
+    },
+    {
+      "upstreamPath": "src/components/queryPanel/QueryField.vue",
+      "localPath": "src/components/queryPanel/QueryField.vue",
+      "sha256": "97fc1ebb1482c648be6b0943b5f2ac768bf1d8fd9c7160520e41be97c8308021",
+      "adoption": "managed"
+    },
+    {
+      "upstreamPath": "src/components/queryPanel/index.vue",
+      "localPath": "src/components/queryPanel/index.vue",
+      "sha256": "ff0f2814c16d02bd14ccf27f63ec0344fbeea6029933caf5d7643c09f2fe06e4",
+      "adoption": "adapted-style",
+      "upstreamContentSha256": "4f2d481deee866c78f13bae1317275cc2c2d78bc78ec46b9b3ec8e633d181020"
+    },
+    {
+      "upstreamPath": "src/components/svgIcon/index.vue",
+      "localPath": "src/components/svgIcon/index.vue",
+      "sha256": "3cbbaa3ec58f87ebd7c40c3498eed077505bc452b7388559989dfa87bea3280b",
+      "adoption": "managed"
+    },
+    {
+      "upstreamPath": "src/components/table/CopyAction.vue",
+      "localPath": "src/components/table/CopyAction.vue",
+      "sha256": "e2f86c7cffbe57e45fca13061085c3a7300ad8832e23930281110e812bb6ca4a",
+      "adoption": "managed"
+    },
+    {
+      "upstreamPath": "src/components/table/TableCell.vue",
+      "localPath": "src/components/table/TableCell.vue",
+      "sha256": "3df40563f458364daff7634c3206f54fdc89367e55d1615bc4921a69f616608e",
+      "adoption": "adapted-style",
+      "upstreamContentSha256": "3635c96370f4949de2d1e54a6418f190a8088775c5d53b162cc9aebfca428007"
+    },
+    {
+      "upstreamPath": "src/components/table/index.vue",
+      "localPath": "src/components/table/index.vue",
+      "sha256": "5688504e7b5604abc0045fdc74d117533b987556716ca0e0c3698fc2b7037f5f",
+      "adoption": "adapted-style",
+      "upstreamContentSha256": "1ab9dff54dd88c17fdd25dcce4ec04ad6c9e0624d5dc9d533425da17a9abe371"
+    },
+    {
+      "upstreamPath": "src/composables/useClipboardAction.js",
+      "localPath": "src/composables/useClipboardAction.js",
+      "sha256": "7ce3a8fb009e0b473f01ab92f3a07954654bdacc33ff6fb7700d4d50543e8ea8",
+      "adoption": "managed"
+    },
+    {
+      "upstreamPath": "src/store/queryPanelPrefs.js",
+      "localPath": "src/store/queryPanelPrefs.js",
+      "sha256": "3e123e478122a8c7f0ded8a98903afb787683e60decf432e4382e21e561152de",
+      "adoption": "managed"
+    },
+    {
+      "upstreamPath": "src/store/tableColumnPrefs.js",
+      "localPath": "src/store/tableColumnPrefs.js",
+      "sha256": "b52852f1aa94006d5ec450e7a15beffde9cfbb940a4a6d1dd2c9aa0659b4d6ad",
+      "adoption": "managed"
+    },
+    {
+      "upstreamPath": "src/App.vue",
+      "localPath": "src/styles/zero-theme.css",
+      "sha256": "51a47a091bc1adb95b4ffc168e8b0c33be086be411e6bcfc3aa4590c15a3f416",
+      "adoption": "extracted-adapted-style",
+      "upstreamContentSha256": "810246b63a8f4e61001caf42823c681287d5c94114c4587c66acdaf06fc489b3"
+    },
+    {
+      "upstreamPath": "src/tailwind.css",
+      "localPath": "src/tailwind.css",
+      "sha256": "4cbb76844220b83d8da1743ccc4168bfeda208b15067901e48354d230b1aad9a",
+      "adoption": "adapted-style",
+      "upstreamContentSha256": "651619199bdb0c975bed9191870bfc571f10100b6d55f96f372199d2635c6b3b"
+    },
+    {
+      "upstreamPath": "src/utils/tableColumnPrefs.js",
+      "localPath": "src/utils/tableColumnPrefs.js",
+      "sha256": "36f2036ef576103912e69d4b9225955efe4ce80e54fe56eec420a78f5031645b",
+      "adoption": "managed"
+    }
+  ]
+}

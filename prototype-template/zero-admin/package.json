@@ -1,0 +1,30 @@
+{
+  "name": "@36knight/zero-admin-prototype",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "2.3.2",
+    "element-plus": "2.11.7",
+    "pinia": "3.0.4",
+    "vue": "3.5.13",
+    "vue-router": "4.5.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "5.2.1",
+    "autoprefixer": "10.4.20",
+    "postcss": "8.5.15",
+    "sass": "1.83.0",
+    "tailwindcss": "3.4.17",
+    "unplugin-auto-import": "0.19.0",
+    "vite": "5.4.21"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}
